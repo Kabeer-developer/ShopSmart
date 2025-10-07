@@ -3,7 +3,13 @@ const Product = require("../models/Product");
 // Create new product (admin)
 exports.createProduct = async (req, res) => {
   try {
-    const product = new Product(req.body);
+    const productData = req.body;
+
+    if (req.file) {
+      productData.image = req.file.path; // Cloudinary URL
+    }
+
+    const product = new Product(productData);
     const savedProduct = await product.save();
     res.status(201).json(savedProduct);
   } catch (error) {
@@ -35,7 +41,13 @@ exports.getProductById = async (req, res) => {
 // Update product (admin)
 exports.updateProduct = async (req, res) => {
   try {
-    const updatedProduct = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    const updatedData = req.body;
+
+    if (req.file) {
+      updatedData.image = req.file.path; // Cloudinary URL
+    }
+
+    const updatedProduct = await Product.findByIdAndUpdate(req.params.id, updatedData, { new: true });
     if (!updatedProduct) return res.status(404).json({ message: "Product not found" });
     res.json(updatedProduct);
   } catch (error) {
