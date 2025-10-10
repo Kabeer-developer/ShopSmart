@@ -7,13 +7,14 @@ const Navbar = () => {
   const { user } = useSelector((state) => state.auth);
 
   const handleLogout = () => {
-    dispatch(logout()); // calls the reducer, clears state & localStorage
+    dispatch(logout());
   };
 
   return (
     <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
       <Link to="/" className="text-xl font-bold">E-Commerce</Link>
       <ul className="flex space-x-4">
+        <li><Link to="/" className="hover:text-gray-300">Home</Link></li>
         <li><Link to="/cart" className="hover:text-gray-300">Cart</Link></li>
 
         {!user ? (
@@ -24,6 +25,12 @@ const Navbar = () => {
         ) : (
           <>
             <li><Link to="/profile" className="hover:text-gray-300">{user.name}</Link></li>
+
+            {/* Admin link for Part 3 */}
+            {user.role === "admin" && (
+              <li><Link to="/admin/products" className="hover:text-gray-300">Admin Products</Link></li>
+            )}
+
             <li>
               <button
                 onClick={handleLogout}
