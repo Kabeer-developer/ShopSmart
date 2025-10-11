@@ -23,7 +23,7 @@ const Orders = () => {
           {orders.map((order) => (
             <div key={order._id} className="flex justify-between items-center border p-4 rounded">
               <p>Order ID: {order._id}</p>
-              <p>Total: ${order.totalPrice.toFixed(2)}</p>
+              <p>Total: ₹{order.totalPrice.toFixed(2)}</p>
               <Link
                 to={`/orders/${order._id}`}
                 className="bg-purple-600 text-white px-4 py-1 rounded hover:bg-purple-700"

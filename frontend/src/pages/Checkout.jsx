@@ -11,15 +11,30 @@ const Checkout = () => {
 
   const totalPrice = items.reduce((acc, item) => acc + item.price * item.qty, 0);
 
-  const handlePlaceOrder = () => {
-    const orderData = {
-      orderItems: items,
-      totalPrice,
-    };
-    dispatch(createNewOrder(orderData));
-    dispatch(clearCart());
-    navigate("/orders");
+const handlePlaceOrder = () => {
+  const orderData = {
+    orderItems: items.map((item) => ({
+      name: item.name,
+      quantity: item.qty,   // ✅ fixed
+      image: item.image,
+      price: item.price,
+      product: item._id,    // backend expects this field
+    })),
+    shippingAddress: {
+      address: "123 Main Street",
+      city: "Bangalore",
+      postalCode: "560001",
+      country: "India",
+    },
+    paymentMethod: "Cash on Delivery",
+    totalPrice,
   };
+
+  dispatch(createNewOrder(orderData));
+  dispatch(clearCart());
+  navigate("/orders");
+};
+
 
   return (
     <div className="max-w-4xl mx-auto p-6 mt-10 bg-white rounded-lg shadow-md">

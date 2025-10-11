@@ -22,14 +22,16 @@ const OrderDetails = () => {
     <div className="max-w-2xl mx-auto mt-10 border p-4 rounded">
       <h2 className="text-2xl font-bold mb-4">Order Details</h2>
       <p>Order ID: {orderDetails._id}</p>
-      <p>Total Price: ${orderDetails.totalPrice.toFixed(2)}</p>
+      <p>Total Price: ₹{orderDetails.totalPrice.toFixed(2)}</p>
       <h3 className="font-bold mt-4">Items:</h3>
       <ul className="list-disc list-inside">
         {orderDetails.orderItems.map((item) => (
-          <li key={item._id}>
-            {item.name} x {item.qty} = ${item.price * item.qty}
-          </li>
-        ))}
+  <li key={item._id}>
+    {item.name} x {item.quantity} = ₹{(item.price * item.quantity).toFixed(2)}
+    
+  </li>
+))}
+
       </ul>
       <Link to="/orders" className="text-blue-600 hover:underline mt-4 inline-block">
         Back to Orders
