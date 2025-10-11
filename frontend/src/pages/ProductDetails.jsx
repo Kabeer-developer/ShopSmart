@@ -20,11 +20,11 @@ const ProductDetails = () => {
   if (!product) return null;
 
   const handleAddToCart = () => {
-    dispatch(addToCart({ product, quantity }));
+    dispatch(addToCart({ ...product, qty: quantity }));
   };
 
   const handleBuyNow = () => {
-    dispatch(addToCart({ product, quantity }));
+    dispatch(addToCart({ ...product, qty: quantity }));
     navigate("/checkout");
   };
 
