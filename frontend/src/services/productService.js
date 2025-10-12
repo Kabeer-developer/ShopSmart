@@ -7,6 +7,7 @@ const getToken = () => {
   return user?.token;
 };
 
+// 🛍 Product Services
 export const getProducts = async () => {
   const res = await axios.get(API_BASE);
   return res.data;
@@ -38,5 +39,19 @@ export const deleteProduct = async (id) => {
   const res = await axios.delete(`${API_BASE}${id}`, {
     headers: { Authorization: `Bearer ${token}` },
   });
+  return res.data;
+};
+
+// 📝 Review Services
+export const addReview = async (productId, reviewData) => {
+  const token = getToken();
+  const res = await axios.post(`${API_BASE}${productId}/reviews`, reviewData, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
+  return res.data;
+};
+
+export const getReviews = async (productId) => {
+  const res = await axios.get(`${API_BASE}${productId}/reviews`);
   return res.data;
 };
