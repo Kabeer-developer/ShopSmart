@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getStats } from "../redux/slices/adminSlice";
 
-const AdminDashboard = () => {
+const AdminStats = () => {
   const dispatch = useDispatch();
   const { stats, loading, error } = useSelector((state) => state.admin);
 
@@ -15,7 +15,7 @@ const AdminDashboard = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Admin Dashboard</h1>
+      <h1 className="text-2xl font-bold mb-4">Revenue / Stats</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="p-4 bg-gray-100 rounded shadow">
           <h2>Total Users</h2>
@@ -42,4 +42,4 @@ const AdminDashboard = () => {
   );
 };
 
-export default AdminDashboard;
+export default AdminStats;
