@@ -23,6 +23,19 @@ exports.deleteUser = async (req, res) => {
   }
 };
 
+// Get all orders
+exports.getAllOrders = async (req, res) => {
+  try {
+    const orders = await Order.find()
+      .populate("user", "name email")
+      .populate("orderItems.product", "name price");
+
+    res.json(orders);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // Get sales stats
 exports.getStats = async (req, res) => {
   try {

@@ -17,6 +17,9 @@ import Checkout from "./pages/Checkout";
 import Orders from "./pages/Orders";
 import OrderDetails from "./pages/OrderDetails";
 
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminUsers from "./pages/AdminUsers";
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -35,6 +38,10 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/profile" element={<Profile />} />
+
+      
+<Route path="/admin/dashboard" element={<AdminDashboard />} />
+<Route path="/admin/users" element={<AdminUsers />} />
     </Routes>
   );
 };

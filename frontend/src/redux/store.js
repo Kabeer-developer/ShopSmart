@@ -4,6 +4,7 @@ import productReducer from "./slices/productSlice";
 import cartReducer from "./slices/cartSlice";
 import orderReducer from "./slices/orderSlice";
 import reviewReducer from "./slices/reviewSlice"; // ✅ new import
+import adminReducer from "./slices/adminSlice"; 
 
 
 export const store = configureStore({
@@ -13,5 +14,6 @@ export const store = configureStore({
     cart: cartReducer,
     orders: orderReducer,
     reviews: reviewReducer, 
+    admin: adminReducer,
   },
 });
