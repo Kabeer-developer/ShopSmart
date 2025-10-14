@@ -18,26 +18,45 @@ const OrderDetails = () => {
 
   if (loading || !orderDetails) return <p>Loading...</p>;
 
-  return (
-    <div className="max-w-2xl mx-auto mt-10 border p-4 rounded">
-      <h2 className="text-2xl font-bold mb-4">Order Details</h2>
-      <p>Order ID: {orderDetails._id}</p>
-      <p>Total Price: ₹{orderDetails.totalPrice.toFixed(2)}</p>
-      <h3 className="font-bold mt-4">Items:</h3>
-      <ul className="list-disc list-inside">
-        {orderDetails.orderItems.map((item) => (
-  <li key={item._id}>
-    {item.name} x {item.quantity} = ₹{(item.price * item.quantity).toFixed(2)}
-    
-  </li>
-))}
+  
+   return (
+  <div className="max-w-2xl mx-auto mt-10 border p-4 rounded">
+    <h2 className="text-2xl font-bold mb-4">Order Details</h2>
 
-      </ul>
-      <Link to="/orders" className="text-blue-600 hover:underline mt-4 inline-block">
-        Back to Orders
-      </Link>
-    </div>
-  );
+    <p><strong>Order ID:</strong> {orderDetails._id}</p>
+    <p><strong>Total Price:</strong> ₹{orderDetails.totalPrice.toFixed(2)}</p>
+
+    {/* ✅ Address Section */}
+    {orderDetails.shippingAddress && (
+      <div className="mt-4">
+        <h3 className="font-bold">Shipping Address:</h3>
+        <p>{orderDetails.shippingAddress.fullName}</p>
+        <p>{orderDetails.shippingAddress.address}</p>
+        <p>{orderDetails.shippingAddress.city}, {orderDetails.shippingAddress.state}</p>
+        <p>{orderDetails.shippingAddress.postalCode}</p>
+        <p>{orderDetails.shippingAddress.country}</p>
+        
+      </div>
+    )}
+
+    <h3 className="font-bold mt-4">Items:</h3>
+    <ul className="list-disc list-inside">
+      {orderDetails.orderItems.map((item) => (
+        <li key={item._id}>
+          {item.name} x {item.quantity} = ₹{(item.price * item.quantity).toFixed(2)}
+        </li>
+      ))}
+    </ul>
+
+    <Link
+      to="/orders"
+      className="text-blue-600 hover:underline mt-4 inline-block"
+    >
+      Back to Orders
+    </Link>
+  </div>
+);
+
 };
 
 export default OrderDetails;
