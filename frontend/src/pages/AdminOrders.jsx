@@ -123,7 +123,7 @@ const AdminOrders = () => {
                             <div className="text-sm font-medium text-gray-900">
                               {o.user?.name || "Unknown User"}
                             </div>
-                            {/* 🏠 Added Address Section */}
+                         
                             <div className="text-xs text-gray-600 mt-1">
                               {o.shippingAddress?.address && (
                                 <>

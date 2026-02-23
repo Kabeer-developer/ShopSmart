@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   return (
     <div className="bg-white border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 group">
-      {/* Image Container */}
+    
       <div className="relative overflow-hidden bg-gray-100 h-48">
         <img
           src={product.image || "https://via.placeholder.com/300"}
@@ -18,7 +18,6 @@ const ProductCard = ({ product }) => {
         )}
       </div>
 
-      {/* Content */}
       <div className="p-4">
         <h3 className="font-semibold text-gray-900 text-lg mb-2 truncate group-hover:text-blue-600 transition-colors">
           {product.name}

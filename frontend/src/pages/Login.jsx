@@ -45,7 +45,6 @@ const Login = () => {
         navigate("/");
       })
       .catch(() => {
-        // Error handled by Redux
       });
   };
 
@@ -61,7 +60,6 @@ const Login = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
-        {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
             <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,9 +70,7 @@ const Login = () => {
           <p className="text-gray-600">Sign in to your account to continue</p>
         </div>
 
-        {/* Form Card */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-          {/* Error Alert */}
           {error && (
             <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4 flex items-start">
               <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -88,7 +84,6 @@ const Login = () => {
           )}
 
           <div className="space-y-5">
-            {/* Email Field */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Email Address
@@ -115,7 +110,6 @@ const Login = () => {
               )}
             </div>
 
-            {/* Password Field */}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Password
@@ -158,7 +152,6 @@ const Login = () => {
               )}
             </div>
 
-            {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <label className="flex items-center cursor-pointer">
                 <input
@@ -178,7 +171,6 @@ const Login = () => {
               </button>
             </div>
 
-            {/* Submit Button */}
             <button
               type="button"
               onClick={handleSubmit}
@@ -204,7 +196,6 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Divider */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
@@ -214,7 +205,6 @@ const Login = () => {
             </div>
           </div>
 
-          {/* Social Login Buttons */}
           <div className="grid grid-cols-2 gap-3">
             <button
               type="button"
@@ -239,7 +229,6 @@ const Login = () => {
             </button>
           </div>
 
-          {/* Sign Up Link */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Don't have an account?{" "}
@@ -253,7 +242,6 @@ const Login = () => {
           </div>
         </div>
 
-        {/* Security Note */}
         <div className="mt-6 text-center">
           <p className="text-xs text-gray-500 flex items-center justify-center">
             <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
             Admin Dashboard
@@ -44,9 +44,8 @@ const AdminDashboard = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {/* Total Users Card */}
+
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
@@ -63,7 +62,6 @@ const AdminDashboard = () => {
             </p>
           </div>
 
-          {/* Total Orders Card */}
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
@@ -80,7 +78,6 @@ const AdminDashboard = () => {
             </p>
           </div>
 
-          {/* Total Sales Card */}
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 border border-gray-100">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
@@ -97,7 +94,6 @@ const AdminDashboard = () => {
             </p>
           </div>
 
-          {/* Top Products Card */}
           <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 p-6 border border-gray-100 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center justify-between mb-4">
               <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">

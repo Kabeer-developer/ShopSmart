@@ -13,12 +13,12 @@ const AdminProducts = () => {
   const { products, loading, error, success } = useSelector((state) => state.products);
 
   const [editing, setEditing] = useState(null);
-  const [form, setForm] = useState({ 
-    name: "", 
-    price: 0, 
-    description: "", 
-    image: "", 
-    category: "" 
+  const [form, setForm] = useState({
+    name: "",
+    price: 0,
+    description: "",
+    image: "",
+    category: ""
   });
 
   useEffect(() => {
@@ -36,12 +36,12 @@ const AdminProducts = () => {
 
   const startEdit = (p) => {
     setEditing(p._id);
-    setForm({ 
-      name: p.name, 
-      price: p.price, 
-      description: p.description || "", 
-      image: p.image || "", 
-      category: p.category || "" 
+    setForm({
+      name: p.name,
+      price: p.price,
+      description: p.description || "",
+      image: p.image || "",
+      category: p.category || ""
     });
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -68,7 +68,6 @@ const AdminProducts = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
             Product Management
@@ -78,7 +77,6 @@ const AdminProducts = () => {
           </p>
         </div>
 
-        {/* Form Section */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold text-gray-900">
@@ -109,7 +107,6 @@ const AdminProducts = () => {
                 />
               </div>
 
-              {/* Price Input */}
               <div>
                 <label htmlFor="price" className="block text-sm font-medium text-gray-700 mb-2">
                   Price (₹) <span className="text-red-500">*</span>
@@ -127,7 +124,7 @@ const AdminProducts = () => {
                 />
               </div>
 
-              {/* Category Input */}
+
               <div>
                 <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-2">
                   Category
@@ -142,7 +139,6 @@ const AdminProducts = () => {
                 />
               </div>
 
-              {/* Image URL Input */}
               <div>
                 <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-2">
                   Image URL
@@ -157,7 +153,6 @@ const AdminProducts = () => {
                 />
               </div>
 
-              {/* Description Textarea */}
               <div className="md:col-span-2">
                 <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
                   Description
@@ -173,7 +168,7 @@ const AdminProducts = () => {
               </div>
             </div>
 
-            {/* Form Actions */}
+
             <div className="flex flex-col sm:flex-row gap-3 pt-4 border-t border-gray-200">
               <button
                 type="submit"
@@ -188,7 +183,7 @@ const AdminProducts = () => {
                 </svg>
                 {editing ? "Update Product" : "Create Product"}
               </button>
-              
+
               {editing && (
                 <button
                   type="button"
@@ -205,7 +200,6 @@ const AdminProducts = () => {
           </form>
         </div>
 
-        {/* Products List Section */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold text-gray-900">Products List</h2>
@@ -214,7 +208,7 @@ const AdminProducts = () => {
             </span>
           </div>
 
-          {/* Loading State */}
+
           {loading && (
             <div className="flex items-center justify-center py-12">
               <div className="text-center">
@@ -224,14 +218,14 @@ const AdminProducts = () => {
             </div>
           )}
 
-          {/* Error State */}
+
           {error && (
             <div className="p-4 bg-red-50 border border-red-200 rounded-lg">
               <p className="text-red-600 text-sm font-medium">{error}</p>
             </div>
           )}
 
-          {/* Products Grid */}
+
           {!loading && !error && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {products && products.length > 0 ? (
@@ -240,7 +234,7 @@ const AdminProducts = () => {
                     key={p._id}
                     className="border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow duration-200 bg-white"
                   >
-                    {/* Product Image */}
+
                     {p.image && (
                       <div className="mb-4 aspect-video bg-gray-100 rounded-lg overflow-hidden">
                         <img
@@ -254,7 +248,7 @@ const AdminProducts = () => {
                       </div>
                     )}
 
-                    {/* Product Info */}
+
                     <div className="mb-4">
                       <h3 className="font-semibold text-gray-900 text-lg mb-2 line-clamp-1">
                         {p.name}
@@ -271,7 +265,7 @@ const AdminProducts = () => {
                       )}
                     </div>
 
-                    {/* Action Buttons */}
+
                     <div className="flex gap-2 pt-4 border-t border-gray-100">
                       <button
                         onClick={() => startEdit(p)}

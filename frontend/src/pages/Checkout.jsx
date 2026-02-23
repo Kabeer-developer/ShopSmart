@@ -98,7 +98,6 @@ const Checkout = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
         <div className="mb-8">
           <button
             onClick={() => navigate("/cart")}
@@ -114,10 +113,8 @@ const Checkout = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Form */}
           <div className="lg:col-span-2">
             <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Shipping Address Section */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center mb-6">
                   <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold mr-3">
@@ -203,7 +200,6 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Payment Method Section */}
               <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
                 <div className="flex items-center mb-6">
                   <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-semibold mr-3">
@@ -230,7 +226,6 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Submit Button - Mobile */}
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -256,7 +251,6 @@ const Checkout = () => {
             </form>
           </div>
 
-          {/* Order Summary Sidebar */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8">
               <h2 className="text-xl font-semibold text-gray-900 mb-6">Order Summary</h2>
@@ -299,7 +293,6 @@ const Checkout = () => {
                 </div>
               </div>
 
-              {/* Submit Button - Desktop */}
               <button
                 type="submit"
                 onClick={handleSubmit}

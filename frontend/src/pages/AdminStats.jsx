@@ -39,7 +39,6 @@ const AdminStats = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
             Revenue & Analytics
@@ -49,9 +48,7 @@ const AdminStats = () => {
           </p>
         </div>
 
-        {/* Stats Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {/* Total Users Card */}
           <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 border border-gray-100 transform hover:-translate-y-1">
             <div className="flex items-center justify-between mb-4">
               <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
@@ -75,7 +72,6 @@ const AdminStats = () => {
             <p className="text-xs text-gray-500">Registered accounts</p>
           </div>
 
-          {/* Total Orders Card */}
           <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 border border-gray-100 transform hover:-translate-y-1">
             <div className="flex items-center justify-between mb-4">
               <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg">
@@ -99,7 +95,6 @@ const AdminStats = () => {
             <p className="text-xs text-gray-500">All-time orders</p>
           </div>
 
-          {/* Total Sales Card */}
           <div className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 p-6 border border-gray-100 transform hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
             <div className="flex items-center justify-between mb-4">
               <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
@@ -124,7 +119,6 @@ const AdminStats = () => {
           </div>
         </div>
 
-        {/* Top Products Section */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="bg-gradient-to-r from-orange-50 to-red-50 px-6 py-5 border-b border-gray-200">
             <div className="flex items-center justify-between">
@@ -154,7 +148,6 @@ const AdminStats = () => {
                     className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-200 hover:border-orange-300 hover:shadow-md transition-all duration-200 group"
                   >
                     <div className="flex items-center flex-1 min-w-0">
-                      {/* Rank Badge */}
                       <div className={`flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center font-bold text-sm shadow-sm mr-4 ${
                         index === 0 ? 'bg-gradient-to-br from-yellow-400 to-yellow-500 text-white' :
                         index === 1 ? 'bg-gradient-to-br from-gray-300 to-gray-400 text-gray-700' :
@@ -164,7 +157,6 @@ const AdminStats = () => {
                         #{index + 1}
                       </div>
 
-                      {/* Product Info */}
                       <div className="flex-1 min-w-0">
                         <h3 className="font-semibold text-gray-900 text-base mb-0.5 truncate group-hover:text-orange-600 transition-colors">
                           {product.name}
@@ -175,7 +167,6 @@ const AdminStats = () => {
                       </div>
                     </div>
 
-                    {/* Price Badge */}
                     <div className="flex-shrink-0 ml-4">
                       <div className="px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 rounded-lg shadow-sm">
                         <p className="text-xs text-green-100 font-medium mb-0.5">Price</p>
@@ -199,7 +190,6 @@ const AdminStats = () => {
           </div>
         </div>
 
-        {/* Additional Stats Summary */}
         <div className="mt-8 bg-white rounded-xl shadow-sm border border-gray-100 p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
             <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

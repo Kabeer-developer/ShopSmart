@@ -57,7 +57,6 @@ const AdminUsers = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-6 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight">
             User Management
@@ -67,10 +66,8 @@ const AdminUsers = () => {
           </p>
         </div>
 
-        {/* Search and Stats Section */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            {/* Search Bar */}
             <div className="relative flex-1 max-w-md">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +83,6 @@ const AdminUsers = () => {
               />
             </div>
 
-            {/* User Count Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-blue-50 border border-blue-200 rounded-lg">
               <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -98,9 +94,7 @@ const AdminUsers = () => {
           </div>
         </div>
 
-        {/* Users Table Section */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-          {/* Desktop Table View */}
           <div className="hidden md:block overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
@@ -174,7 +168,6 @@ const AdminUsers = () => {
             </table>
           </div>
 
-          {/* Mobile Card View */}
           <div className="md:hidden divide-y divide-gray-200">
             {filteredUsers.length > 0 ? (
               filteredUsers.map((user) => (

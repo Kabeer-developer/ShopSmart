@@ -51,7 +51,6 @@ const Cart = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {items.map((item) => (
               <div
@@ -59,7 +58,6 @@ const Cart = () => {
                 className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200"
               >
                 <div className="flex gap-6">
-                  {/* Product Image */}
                   <div className="flex-shrink-0">
                     <img
                       src={item.image || "https://via.placeholder.com/120"}
@@ -68,7 +66,6 @@ const Cart = () => {
                     />
                   </div>
 
-                  {/* Product Details */}
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-start mb-2">
                       <h3 className="text-lg font-semibold text-gray-900 truncate pr-4">
@@ -89,7 +86,6 @@ const Cart = () => {
                       ₹{item.price.toLocaleString()}
                     </p>
 
-                    {/* Quantity Controls */}
                     <div className="flex items-center gap-3">
                       <label className="text-sm font-medium text-gray-700">Quantity:</label>
                       <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
@@ -124,7 +120,6 @@ const Cart = () => {
               </div>
             ))}
 
-            {/* Clear Cart Button - Mobile */}
             <button
               onClick={() => dispatch(clearCart())}
               className="lg:hidden w-full bg-white text-gray-700 font-medium px-6 py-3 rounded-lg border border-gray-300 hover:bg-gray-50 transition-colors duration-200"
@@ -133,7 +128,6 @@ const Cart = () => {
             </button>
           </div>
 
-          {/* Order Summary */}
           <div className="lg:col-span-1">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8">
               <h2 className="text-xl font-semibold text-gray-900 mb-6">Order Summary</h2>
