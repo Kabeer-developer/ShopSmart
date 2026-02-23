@@ -48,12 +48,44 @@ const OrderDetails = () => {
                 })}
               </p>
             </div>
-            <div className="mt-4 sm:mt-0 text-left sm:text-right">
-              <p className="text-sm text-gray-600 mb-1">Total Amount</p>
-              <p className="text-3xl font-bold text-gray-900">
-                ₹{orderDetails.totalPrice?.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
-              </p>
-            </div>
+            <div className="mt-4 sm:mt-0 text-left sm:text-right space-y-2">
+  <div>
+    <p className="text-sm text-gray-600 mb-1">Total Amount</p>
+    <p className="text-3xl font-bold text-gray-900">
+      ₹{orderDetails.totalPrice?.toLocaleString("en-IN", {
+        minimumFractionDigits: 2,
+      })}
+    </p>
+  </div>
+
+  {/* ✅ Delivery Status */}
+  <div>
+    <p className="text-sm text-gray-600 mb-1">Delivery Status</p>
+
+    {orderDetails.isDelivered ? (
+      <div className="inline-flex flex-col items-end">
+        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+          Delivered
+        </span>
+        {orderDetails.deliveredAt && (
+          <span className="text-xs text-gray-500 mt-1">
+            Delivered on{" "}
+            {new Date(orderDetails.deliveredAt).toLocaleDateString("en-US", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </span>
+        )}
+      </div>
+    ) : (
+      <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+        Pending
+      </span>
+    )}
+  </div>
+</div>
+
           </div>
         </div>
 
